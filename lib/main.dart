@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'screens/recipe.dart';
+import 'screens/recipe_screen.dart';
+import 'screens/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +12,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/',
       routes: {
-        '/': (context) => Recipe(),
+        '/': (context) => Home(),
+        '/recipe': (context) => RecipeScreen(),
       },
     );
   }
