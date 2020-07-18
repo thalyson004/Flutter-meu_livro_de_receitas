@@ -13,7 +13,38 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.red[900],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+            isScrollControlled: true,
+            context: context,
+            builder: (context) {
+              return Container(
+                color: Colors.white70,
+                child: ListView(
+                  children: <Widget>[
+                    TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Digite o nome da receita',
+                      ),
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Digite os ingredientes',
+                      ),
+                      maxLines: 5,
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Digite o modo de preparo',
+                      ),
+                      maxLines: 5,
+                    ),
+                  ],
+                ),
+              );
+            },
+          );
+        },
         tooltip: 'Increment',
         child: Icon(
           Icons.add,
